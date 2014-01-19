@@ -17,8 +17,6 @@ import com.google.android.gcm.server.Result;
 import com.google.android.gcm.server.Sender;
 
 
-
-
 public class MessageDao implements IMessageDao {
 	
 	public final static String API_KEY = MessageKeyDispatcher.getString("Message.api.key"); //$NON-NLS-1$
