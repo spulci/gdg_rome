@@ -13,14 +13,14 @@ import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.Named;
 import com.google.appengine.api.datastore.Key;
 
-@Api(name = "clientendpoint"/*, namespace = @ApiNamespace(ownerDomain = "gdgrome.org", ownerName = "gdgrome.org", packagePath = "")*/)
+@Api(name = "clientendpoint")
 public class ClientEndpoint {
 	
 	public ClientEndpoint() {
 		
 	}
 	
-	@ApiMethod(name = "listClients")
+	@ApiMethod(name = "clientendpoint.listClients", httpMethod="post")
 	public List<ClientBean> listClientBeans(){
 		List<ClientBean> clientBeanLst = null;
 		ClientDao daoClient = new ClientDao();
@@ -28,13 +28,13 @@ public class ClientEndpoint {
 		return clientBeanLst;
 	}
 	
-	@ApiMethod(name = "addClient")
+	@ApiMethod(name = "clientendpoint.addClient", httpMethod="post")
 	public void addClient(ClientBean client){
 		ClientDao daoClient = new ClientDao();
 		daoClient.addClientBean(client);
 	}
 	
-	@ApiMethod(name = "removeClient")
+	@ApiMethod(name = "clientendpoint.removeClient", httpMethod="post")
 	public void removeClient(Key id){
 		ClientDao daoClient = new ClientDao();
 		daoClient.removeClientBeanById(id);

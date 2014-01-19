@@ -24,9 +24,9 @@
     "maxAge" : 0
   },
   "methods" : {
-    "messageEndpoint.send" : {
+    "messageEndpoint.messageEndpoint.send" : {
       "path" : "sendMessage/{message}",
-      "httpMethod" : "POST",
+      "httpMethod" : "post",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],

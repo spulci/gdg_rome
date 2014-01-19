@@ -8,8 +8,8 @@
 
   <groupId>com.google.apis</groupId>
   <artifactId>google-api-services-messageEndpoint</artifactId>
-  <version>v1-rev20140119181140-1.16.0-rc</version>
-  <name>messageEndpoint v1 (revision 20140119181140)</name>
+  <version>v1-rev20140119213912-1.16.0-rc</version>
+  <name>messageEndpoint v1 (revision 20140119213912)</name>
   <packaging>jar</packaging>
 
   <inceptionYear>2011</inceptionYear>

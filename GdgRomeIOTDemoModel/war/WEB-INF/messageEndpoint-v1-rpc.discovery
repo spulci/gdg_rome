@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"FWXGb4Q2eZqWRcG8B2Ixrr-vrqQ/M2NZCqVwzLavCwEr7rRMVpfZEps\"",
+ "etag": "\"FWXGb4Q2eZqWRcG8B2Ixrr-vrqQ/E40kmAs7TMPmpXk3ZrCuqLRAn3c\"",
  "discoveryVersion": "v1",
  "id": "messageEndpoint:v1",
  "name": "messageEndpoint",
@@ -69,8 +69,8 @@
   }
  },
  "methods": {
-  "messageEndpoint.send": {
-   "id": "messageEndpoint.send",
+  "messageEndpoint.messageEndpoint.send": {
+   "id": "messageEndpoint.messageEndpoint.send",
    "parameters": {
     "message": {
      "type": "string",

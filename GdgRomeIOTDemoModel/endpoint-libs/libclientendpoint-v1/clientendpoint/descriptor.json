@@ -1,13 +1,13 @@
 {
   "files": [
     {
-      "downloadUrl": "/downloads/clientendpoint/v1/20140119181126/java/1.16.0-rc/gdgrometestapp_appspot_com-clientendpoint-v1-20140119181126-java-1.16.0-rc-sources.jar", 
-      "path": "gdgrometestapp_appspot_com-clientendpoint-v1-20140119181126-java-1.16.0-rc-sources.jar", 
+      "downloadUrl": "/downloads/clientendpoint/v1/20140119213901/java/1.16.0-rc/gdgrometestapp_appspot_com-clientendpoint-v1-20140119213901-java-1.16.0-rc-sources.jar", 
+      "path": "gdgrometestapp_appspot_com-clientendpoint-v1-20140119213901-java-1.16.0-rc-sources.jar", 
       "type": "source", 
-      "timestamp": "2014-01-19 18:11"
+      "timestamp": "2014-01-19 21:39"
     }, 
     {
-      "path": "gdgrometestapp_appspot_com-clientendpoint-v1-20140119181126-java-1.16.0-rc.jar.properties", 
+      "path": "gdgrometestapp_appspot_com-clientendpoint-v1-20140119213901-java-1.16.0-rc.jar.properties", 
       "type": "android.properties"
     }
   ], 
@@ -701,5 +701,5 @@
   "version": "v1", 
   "language_version": "1.16.0-rc", 
   "id": "clientendpoint:v1", 
-  "revision": 20140119181126
+  "revision": 20140119213901
 }

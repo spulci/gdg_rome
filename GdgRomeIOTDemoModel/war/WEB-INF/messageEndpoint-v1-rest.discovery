@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"FWXGb4Q2eZqWRcG8B2Ixrr-vrqQ/M2NZCqVwzLavCwEr7rRMVpfZEps\"",
+ "etag": "\"FWXGb4Q2eZqWRcG8B2Ixrr-vrqQ/E40kmAs7TMPmpXk3ZrCuqLRAn3c\"",
  "discoveryVersion": "v1",
  "id": "messageEndpoint:v1",
  "name": "messageEndpoint",
@@ -70,24 +70,28 @@
    }
   }
  },
- "methods": {
-  "send": {
-   "id": "messageEndpoint.send",
-   "path": "{message}",
-   "httpMethod": "POST",
-   "parameters": {
-    "message": {
-     "type": "string",
-     "required": true,
-     "location": "path"
+ "resources": {
+  "messageEndpoint": {
+   "methods": {
+    "send": {
+     "id": "messageEndpoint.messageEndpoint.send",
+     "path": "{message}",
+     "httpMethod": "POST",
+     "parameters": {
+      "message": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      }
+     },
+     "parameterOrder": [
+      "message"
+     ],
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
     }
-   },
-   "parameterOrder": [
-    "message"
-   ],
-   "scopes": [
-    "https://www.googleapis.com/auth/userinfo.email"
-   ]
+   }
   }
  }
 }

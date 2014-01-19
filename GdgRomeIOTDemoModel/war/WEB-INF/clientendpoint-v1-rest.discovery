@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"FWXGb4Q2eZqWRcG8B2Ixrr-vrqQ/Ofvo3BZEFz6uG6M0Q5s4RulBCoE\"",
+ "etag": "\"FWXGb4Q2eZqWRcG8B2Ixrr-vrqQ/Fb_IYXrT2weWdmUo2-OA6SR1zRk\"",
  "discoveryVersion": "v1",
  "id": "clientendpoint:v1",
  "name": "clientendpoint",
@@ -83,6 +83,10 @@
     },
     "registrationId": {
      "type": "string"
+    },
+    "timestamp": {
+     "type": "string",
+     "format": "int64"
     }
    }
   },
@@ -127,41 +131,45 @@
    }
   }
  },
- "methods": {
-  "addClient": {
-   "id": "clientendpoint.addClient",
-   "path": "addClient",
-   "httpMethod": "POST",
-   "request": {
-    "$ref": "ClientBean",
-    "parameterName": "resource"
-   },
-   "scopes": [
-    "https://www.googleapis.com/auth/userinfo.email"
-   ]
-  },
-  "listClients": {
-   "id": "clientendpoint.listClients",
-   "path": "clientbean",
-   "httpMethod": "GET",
-   "response": {
-    "$ref": "ClientBeanCollection"
-   },
-   "scopes": [
-    "https://www.googleapis.com/auth/userinfo.email"
-   ]
-  },
-  "removeClient": {
-   "id": "clientendpoint.removeClient",
-   "path": "client",
-   "httpMethod": "DELETE",
-   "request": {
-    "$ref": "Key",
-    "parameterName": "resource"
-   },
-   "scopes": [
-    "https://www.googleapis.com/auth/userinfo.email"
-   ]
+ "resources": {
+  "clientendpoint": {
+   "methods": {
+    "addClient": {
+     "id": "clientendpoint.clientendpoint.addClient",
+     "path": "addClient",
+     "httpMethod": "POST",
+     "request": {
+      "$ref": "ClientBean",
+      "parameterName": "resource"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "listClients": {
+     "id": "clientendpoint.clientendpoint.listClients",
+     "path": "clientbean",
+     "httpMethod": "POST",
+     "response": {
+      "$ref": "ClientBeanCollection"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "removeClient": {
+     "id": "clientendpoint.clientendpoint.removeClient",
+     "path": "client",
+     "httpMethod": "POST",
+     "request": {
+      "$ref": "Key",
+      "parameterName": "resource"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    }
+   }
   }
  }
 }

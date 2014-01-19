@@ -24,9 +24,9 @@
     "maxAge" : 0
   },
   "methods" : {
-    "clientendpoint.addClient" : {
+    "clientendpoint.clientendpoint.addClient" : {
       "path" : "addClient",
-      "httpMethod" : "POST",
+      "httpMethod" : "post",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
@@ -40,9 +40,9 @@
         "body" : "empty"
       }
     },
-    "clientendpoint.listClients" : {
+    "clientendpoint.clientendpoint.listClients" : {
       "path" : "clientbean",
-      "httpMethod" : "GET",
+      "httpMethod" : "post",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
@@ -55,9 +55,9 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "clientendpoint.removeClient" : {
+    "clientendpoint.clientendpoint.removeClient" : {
       "path" : "client",
-      "httpMethod" : "DELETE",
+      "httpMethod" : "post",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
