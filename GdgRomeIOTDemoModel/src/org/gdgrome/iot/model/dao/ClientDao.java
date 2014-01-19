@@ -84,5 +84,19 @@ public class ClientDao implements IClientDao {
 		}
 		
 	}
+	
+	@Override
+	public void removeClientByRegistrationId(String id) {
+		EntityManager iotEntityManager = IOTServiceSingleton.makeInstance().createEntityManager();
+		
+		try{
+			ClientBean clientBean = fetchClientBeanByRegistrationId(id);
+			iotEntityManager.remove(clientBean);
+		}
+		finally{
+			iotEntityManager.close();
+		}
+		
+	}
 
 }

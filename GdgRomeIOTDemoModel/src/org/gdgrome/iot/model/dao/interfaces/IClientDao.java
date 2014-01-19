@@ -12,4 +12,5 @@ public interface IClientDao {
 	public ClientBean fetchClientBeanByMessageId(String id);
 	public void addClientBean(ClientBean entity);
 	public void removeClientBeanById(long id);
+	public void removeClientByRegistrationId(String id);
 }
