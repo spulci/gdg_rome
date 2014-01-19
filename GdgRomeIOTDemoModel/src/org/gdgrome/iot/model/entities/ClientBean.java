@@ -16,6 +16,7 @@ public class ClientBean {
 		
 		private String registrationId;
 		private String messageId;
+		private long timestamp = 0L;
 		
 		public ClientBean() {
 			// TODO Auto-generated constructor stub
@@ -52,6 +53,15 @@ public class ClientBean {
 		public void setMessageId(String messageId) {
 			this.messageId = messageId;
 		}
+
+		public long getTimestamp() {
+			return timestamp;
+		}
+
+		public void setTimestamp(long timestamp) {
+			this.timestamp = timestamp;
+		}
+		
 		
 		
 		

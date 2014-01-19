@@ -86,6 +86,10 @@
           },
           "messageId" : {
             "type" : "string"
+          },
+          "timestamp" : {
+            "type" : "string",
+            "format" : "int64"
           }
         }
       },
@@ -109,11 +113,11 @@
           "parent" : {
             "$ref" : "Key"
           },
-          "namespace" : {
-            "type" : "string"
-          },
           "complete" : {
             "type" : "boolean"
+          },
+          "namespace" : {
+            "type" : "string"
           }
         }
       },

@@ -18,11 +18,7 @@ public class MessageDataBean {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Key key;
   
-  /*
-   * The text of the message sent
-   */
   private String message;
-
   private long timestamp;
   
   public Key getKey() {

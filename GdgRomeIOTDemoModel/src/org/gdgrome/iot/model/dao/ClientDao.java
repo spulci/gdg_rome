@@ -68,6 +68,9 @@ public class ClientDao implements IClientDao {
 	public synchronized void addClientBean(ClientBean entity) {
 		EntityManager iotEntityManager = IOTServiceSingleton.makeInstance().createEntityManager();
 		
+		if (entity.getTimestamp() == 0L)
+			entity.setTimestamp(System.currentTimeMillis());
+		
 		iotEntityManager.persist(entity);
 		iotEntityManager.close();
 

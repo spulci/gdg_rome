@@ -13,8 +13,12 @@ import org.gdgrome.iot.model.entities.ClientBean;
 public class GdgRomeIOTDemoModelServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		//resp.setContentType("text/plain");
-		//resp.getWriter().println("Hello, world");
+		
+		//Se lo usate crea uno stub e fa un test....attenzione funziona solo al primo lancio
+		//del resto il registrationID è univoco...e se lo lanciate più volte la delete fallisce
+		//perché non da uno uniqueresult quando fa la fetch per trovare un oggetto
+		//attached al persistent layer
+		
 		ClientBean bean = new ClientBean();
 		bean.setMessageId("abnd343543443");
 		bean.setRegistrationId("032jdbfew223");
@@ -30,6 +34,6 @@ public class GdgRomeIOTDemoModelServlet extends HttpServlet {
 	}
 	
 	public void init(){
-		System.out.println("Init OK");
+		//Qui inizializzerò il bootstrap di WELD quando avrò finito il logging
 	}
 }

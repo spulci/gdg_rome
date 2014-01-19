@@ -32,12 +32,12 @@ public class MessageDao implements IMessageDao {
 		Sender sender = new Sender(API_KEY);
 		ClientDao daoClient = new ClientDao();
 		
-	    // create a MessageData entity with a timestamp of when it was
-	    // received, and persist it
 	    MessageDataBean messageDataBean = new MessageDataBean();
 	    messageDataBean.setMessage(message);
 	    messageDataBean.setTimestamp(System.currentTimeMillis());
+	    
 	    EntityManager mgr = IOTServiceSingleton.makeInstance().createEntityManager();
+	    
 	    try {
 	      mgr.persist(messageDataBean);
 	    } finally {
