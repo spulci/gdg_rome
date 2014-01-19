@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.gdgrome.iot.model.entities.ClientBean;
 
+import com.google.appengine.api.datastore.Key;
+
 public interface IClientDao {
 
 	public List<ClientBean> fetchClientBeans();
@@ -11,6 +13,6 @@ public interface IClientDao {
 	public ClientBean fetchClientBeanByRegistrationId(String id);
 	public ClientBean fetchClientBeanByMessageId(String id);
 	public void addClientBean(ClientBean entity);
-	public void removeClientBeanById(long id);
+	public void removeClientBeanById(Key id);
 	public void removeClientByRegistrationId(String id);
 }

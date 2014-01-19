@@ -1,6 +1,7 @@
-package org.gdgroe.iot.endpoints;
+package org.gdgrome.iot.endpoints;
 
 import java.util.List;
+
 
 
 import org.gdgrome.iot.model.dao.ClientDao;
@@ -10,8 +11,9 @@ import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.Named;
+import com.google.appengine.api.datastore.Key;
 
-@Api(name = "clientendpoint", namespace = @ApiNamespace(ownerDomain = "gdgrome.org", ownerName = "gdgrome.org", packagePath = ""))
+@Api(name = "clientendpoint"/*, namespace = @ApiNamespace(ownerDomain = "gdgrome.org", ownerName = "gdgrome.org", packagePath = "")*/)
 public class ClientEndpoint {
 	
 	public ClientEndpoint() {
@@ -27,13 +29,13 @@ public class ClientEndpoint {
 	}
 	
 	@ApiMethod(name = "addClient")
-	public void addClient(@Named("client")ClientBean bean){
+	public void addClient(ClientBean client){
 		ClientDao daoClient = new ClientDao();
-		daoClient.addClientBean(bean);
+		daoClient.addClientBean(client);
 	}
 	
 	@ApiMethod(name = "removeClient")
-	public void removeClient(@Named("id")long id){
+	public void removeClient(Key id){
 		ClientDao daoClient = new ClientDao();
 		daoClient.removeClientBeanById(id);
 	}

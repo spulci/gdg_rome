@@ -15,7 +15,7 @@
   <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
   <init-param>
    <param-name>services</param-name>
-   <param-value>org.gdgroe.iot.endpoints.ClientEndpoint</param-value>
+   <param-value>org.gdgrome.iot.endpoints.ClientEndpoint,org.gdgrome.iot.endpoints.MessageEndpoint</param-value>
   </init-param>
  </servlet>
  <servlet-mapping>

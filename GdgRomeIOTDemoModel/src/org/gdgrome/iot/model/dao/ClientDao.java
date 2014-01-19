@@ -9,6 +9,8 @@ import org.gdgrome.iot.model.dao.interfaces.IClientDao;
 import org.gdgrome.iot.model.entities.ClientBean;
 import org.gdgrome.iot.model.factory.IOTServiceSingleton;
 
+import com.google.appengine.api.datastore.Key;
+
 public class ClientDao implements IClientDao {
 	
 	private final static String clientClassName = ClientBean.class.getName();
@@ -42,7 +44,7 @@ public class ClientDao implements IClientDao {
 	public ClientBean fetchClientBeanByRegistrationId(String id) {
 		EntityManager iotEntityManager = IOTServiceSingleton.makeInstance().createEntityManager();
 		
-		Query q = iotEntityManager.createQuery("select m from " + clientClassName + " m where t.registrationId = :registrationIdValue");
+		Query q = iotEntityManager.createQuery("select m from " + clientClassName + " m where m.registrationId = :registrationIdValue");
 		q.setParameter("registrationIdValue", id);
 		
 		ClientBean clientBean = (ClientBean) q.getSingleResult();
@@ -54,7 +56,7 @@ public class ClientDao implements IClientDao {
 	public ClientBean fetchClientBeanByMessageId(String id) {
 		EntityManager iotEntityManager = IOTServiceSingleton.makeInstance().createEntityManager();
 		
-		Query q = iotEntityManager.createQuery("select m from " + clientClassName + " m where t.messageId = :messageIdValue");
+		Query q = iotEntityManager.createQuery("select m from " + clientClassName + " m where m.messageId = :messageIdValue");
 		q.setParameter("messageIdValue", id);
 		
 		ClientBean clientBean = (ClientBean) q.getSingleResult();
@@ -72,7 +74,7 @@ public class ClientDao implements IClientDao {
 	}
 
 	@Override
-	public void removeClientBeanById(long id) {
+	public void removeClientBeanById(Key id) {
 		EntityManager iotEntityManager = IOTServiceSingleton.makeInstance().createEntityManager();
 		
 		try{

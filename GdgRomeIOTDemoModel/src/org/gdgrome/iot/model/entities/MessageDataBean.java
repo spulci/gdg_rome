@@ -23,9 +23,6 @@ public class MessageDataBean {
    */
   private String message;
 
-  /*
-   * Timestamp indicating when this device registered with the application.
-   */
   private long timestamp;
   
   public Key getKey() {

@@ -5,12 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.google.appengine.api.datastore.Key;
+
 @Entity
 public class ClientBean {
 
 		@Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
-		private long id;
+		private Key id;
 		
 		private String registrationId;
 		private String messageId;
@@ -30,11 +32,11 @@ public class ClientBean {
 			this.messageId = messageId;
 		}
 		
-		public long getId() {
+		public Key getId() {
 			return id;
 		}
 
-		public void setId(long id) {
+		public void setId(Key id) {
 			this.id = id;
 		}
 		
