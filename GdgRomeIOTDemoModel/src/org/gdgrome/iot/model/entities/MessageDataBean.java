@@ -16,15 +16,21 @@ public class MessageDataBean {
    */
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Key key;
+  private Key id;
   
   private String message;
   private long timestamp;
   
-  public Key getKey() {
-    return key;
-  }
   
+  
+  public Key getId() {
+	return id;
+  }
+
+  public void setId(Key id) {
+	this.id = id;
+  }
+
   public String getMessage() {
     return message;
   }
