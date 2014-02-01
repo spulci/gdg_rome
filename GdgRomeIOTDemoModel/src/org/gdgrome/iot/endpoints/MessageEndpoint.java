@@ -1,6 +1,7 @@
 package org.gdgrome.iot.endpoints;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import org.gdgrome.iot.model.dao.MessageDao;
 
@@ -10,6 +11,8 @@ import com.google.api.server.spi.config.Named;
 
 @Api(name="messageEndpoint")
 public class MessageEndpoint {
+	
+	private static final Logger log = Logger.getLogger(MessageEndpoint.class.getName());
 
 	public MessageEndpoint() {
 		// TODO Auto-generated constructor stub
@@ -17,6 +20,8 @@ public class MessageEndpoint {
 	
 	@ApiMethod(name = "messageEndpoint.send", httpMethod="post")
 	public void sendMessage(@Named("message") String message) throws IOException{
+		log.info("Endpoint call: clientendpoint.listClients");
+		
 		MessageDao daoMessage = new MessageDao();
 		daoMessage.sendMessagge(message);	
 	}

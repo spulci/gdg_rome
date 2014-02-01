@@ -8,8 +8,8 @@
 
   <groupId>com.google.apis</groupId>
   <artifactId>google-api-services-clientendpoint</artifactId>
-  <version>v1-rev20140119213901-1.16.0-rc</version>
-  <name>clientendpoint v1 (revision 20140119213901)</name>
+  <version>v1-rev20140201110944-1.16.0-rc</version>
+  <name>clientendpoint v1 (revision 20140201110944)</name>
   <packaging>jar</packaging>
 
   <inceptionYear>2011</inceptionYear>

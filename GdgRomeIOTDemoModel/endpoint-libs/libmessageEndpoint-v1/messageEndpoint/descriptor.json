@@ -1,13 +1,13 @@
 {
   "files": [
     {
-      "downloadUrl": "/downloads/messageEndpoint/v1/20140119213912/java/1.16.0-rc/gdgrometestapp_appspot_com-messageEndpoint-v1-20140119213912-java-1.16.0-rc-sources.jar", 
-      "path": "gdgrometestapp_appspot_com-messageEndpoint-v1-20140119213912-java-1.16.0-rc-sources.jar", 
+      "downloadUrl": "/downloads/messageEndpoint/v1/20140201111002/java/1.16.0-rc/gdgrometestapp_appspot_com-messageEndpoint-v1-20140201111002-java-1.16.0-rc-sources.jar", 
+      "path": "gdgrometestapp_appspot_com-messageEndpoint-v1-20140201111002-java-1.16.0-rc-sources.jar", 
       "type": "source", 
-      "timestamp": "2014-01-19 21:39"
+      "timestamp": "2014-02-01 11:10"
     }, 
     {
-      "path": "gdgrometestapp_appspot_com-messageEndpoint-v1-20140119213912-java-1.16.0-rc.jar.properties", 
+      "path": "gdgrometestapp_appspot_com-messageEndpoint-v1-20140201111002-java-1.16.0-rc.jar.properties", 
       "type": "android.properties"
     }
   ], 
@@ -701,5 +701,5 @@
   "version": "v1", 
   "language_version": "1.16.0-rc", 
   "id": "messageEndpoint:v1", 
-  "revision": 20140119213912
+  "revision": 20140201111002
 }

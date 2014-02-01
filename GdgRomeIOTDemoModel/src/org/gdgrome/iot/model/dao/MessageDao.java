@@ -2,7 +2,9 @@ package org.gdgrome.iot.model.dao;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 
 import org.gdgrome.iot.common.MessageKeyDispatcher;
@@ -21,6 +23,8 @@ public class MessageDao implements IMessageDao {
 	
 	public final static String API_KEY = MessageKeyDispatcher.getString("Message.api.key"); //$NON-NLS-1$
 
+	private static final Logger log = Logger.getLogger(MessageDao.class.getName());
+
 	public MessageDao() {
 		// TODO Auto-generated constructor stub
 	}
@@ -29,6 +33,7 @@ public class MessageDao implements IMessageDao {
 	public void sendMessagge(String message)
 			throws IOException {
 		
+		log.info(MessageDao.class.getName() + " sendMessagge() with message = " + message);
 		Sender sender = new Sender(API_KEY);
 		ClientDao daoClient = new ClientDao();
 		
@@ -38,21 +43,38 @@ public class MessageDao implements IMessageDao {
 	    
 	    EntityManager mgr = IOTServiceSingleton.makeInstance().createEntityManager();
 	    
+	    log.info(MessageDao.class.getName() + " sendMessagge() persisting message now");
 	    try {
 	      mgr.persist(messageDataBean);
-	    } finally {
+	    }
+	    catch(EntityExistsException e){
+			log.severe("Entyty already exist with id = " + messageDataBean.getId().getId() + "   " + e.getMessage());
+		}
+		catch(Exception e){
+			log.severe("Exeception for entity with id = " + messageDataBean.getId().getId() + "   " + e.getMessage());
+		}
+	    finally {
 	      mgr.close();
 	    }
-	    // ping a max of 10 registered devices
+	    
+	    
 	    List<ClientBean> clients = daoClient.fetchClientBeans();
 	    
+	    log.info(MessageDao.class.getName() + " sendMessagge() sending msg via GCM to all now");
+	    
 	    for (ClientBean beanClient : clients) {
-	      doSendViaGcm(message, sender, beanClient);
+	    	try{
+	    		log.info("sending message to client with registration id = " + beanClient.getRegistrationId());
+	    		doSendViaGcm(message, sender, beanClient);
+	    	}
+	    	catch(IOException e){
+	    		log.severe("IOException for GCM send for message = " + message + " and bean registration id = " + beanClient.getRegistrationId());
+	    	} 
+	      
 	    }
 	}
 	
-	private static Result doSendViaGcm(String message, Sender sender,
-			ClientBean clientBean) throws IOException {
+	private static Result doSendViaGcm(String message, Sender sender, ClientBean clientBean) throws IOException {
 		    // Trim message if needed.
 			ClientDao daoClient = new ClientDao();
 			
