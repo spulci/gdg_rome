@@ -1,27 +1,27 @@
 {
   "files": [
     {
-      "downloadUrl": "/downloads/clientendpoint/v1/20140201110944/java/1.16.0-rc/gdgrometestapp_appspot_com-clientendpoint-v1-20140201110944-java-1.16.0-rc-sources.jar", 
-      "path": "gdgrometestapp_appspot_com-clientendpoint-v1-20140201110944-java-1.16.0-rc-sources.jar", 
+      "downloadUrl": "/downloads/clientEndpoint/v1/20140202153136/java/1.16.0-rc/gdgrometestapp_appspot_com-clientEndpoint-v1-20140202153136-java-1.16.0-rc-sources.jar", 
+      "path": "gdgrometestapp_appspot_com-clientEndpoint-v1-20140202153136-java-1.16.0-rc-sources.jar", 
       "type": "source", 
-      "timestamp": "2014-02-01 11:09"
+      "timestamp": "2014-02-02 15:31"
     }, 
     {
-      "path": "gdgrometestapp_appspot_com-clientendpoint-v1-20140201110944-java-1.16.0-rc.jar.properties", 
+      "path": "gdgrometestapp_appspot_com-clientEndpoint-v1-20140202153136-java-1.16.0-rc.jar.properties", 
       "type": "android.properties"
     }
   ], 
   "proguard-config": "proguard-google-api-client.txt", 
   "ownerDomain": "gdgrometestapp.appspot.com", 
   "moduleName": "com.appspot.gdgrometestapp", 
-  "name": "clientendpoint", 
+  "name": "clientEndpoint", 
   "language": "java", 
-  "title": "clientendpoint", 
+  "title": "clientEndpoint", 
   "kind": "discovery#directoryItem", 
   "modulePath": "com/appspot/gdgrometestapp", 
   "maven": {
     "group_id": "com.appspot.gdgrometestapp", 
-    "artifact_id": "clientendpoint", 
+    "artifact_id": "clientEndpoint", 
     "version": "v1-1.16.0-rc-SNAPSHOT"
   }, 
   "dependencies": [
@@ -700,6 +700,6 @@
   "ownerName": "gdgrometestapp_appspot_com", 
   "version": "v1", 
   "language_version": "1.16.0-rc", 
-  "id": "clientendpoint:v1", 
-  "revision": 20140201110944
+  "id": "clientEndpoint:v1", 
+  "revision": 20140202153136
 }

@@ -1,9 +1,9 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"FWXGb4Q2eZqWRcG8B2Ixrr-vrqQ/Fb_IYXrT2weWdmUo2-OA6SR1zRk\"",
+ "etag": "\"FWXGb4Q2eZqWRcG8B2Ixrr-vrqQ/tz5JeNt9ZTX3Fysu6cG-XqsOMbg\"",
  "discoveryVersion": "v1",
- "id": "clientendpoint:v1",
- "name": "clientendpoint",
+ "id": "clientEndpoint:v1",
+ "name": "clientEndpoint",
  "version": "v1",
  "description": "This is an API",
  "icons": {
@@ -76,9 +76,6 @@
     "id": {
      "$ref": "Key"
     },
-    "messageId": {
-     "type": "string"
-    },
     "registrationId": {
      "type": "string"
     },
@@ -130,8 +127,8 @@
   }
  },
  "methods": {
-  "clientendpoint.clientendpoint.addClient": {
-   "id": "clientendpoint.clientendpoint.addClient",
+  "clientEndpoint.operation.addClient": {
+   "id": "clientEndpoint.operation.addClient",
    "parameters": {
     "resource": {
      "$ref": "ClientBean"
@@ -144,8 +141,8 @@
     "https://www.googleapis.com/auth/userinfo.email"
    ]
   },
-  "clientendpoint.clientendpoint.listClients": {
-   "id": "clientendpoint.clientendpoint.listClients",
+  "clientEndpoint.operation.listClients": {
+   "id": "clientEndpoint.operation.listClients",
    "returns": {
     "$ref": "ClientBeanCollection"
    },
@@ -153,8 +150,8 @@
     "https://www.googleapis.com/auth/userinfo.email"
    ]
   },
-  "clientendpoint.clientendpoint.removeClient": {
-   "id": "clientendpoint.clientendpoint.removeClient",
+  "clientEndpoint.operation.removeClient": {
+   "id": "clientEndpoint.operation.removeClient",
    "parameters": {
     "resource": {
      "$ref": "Key"

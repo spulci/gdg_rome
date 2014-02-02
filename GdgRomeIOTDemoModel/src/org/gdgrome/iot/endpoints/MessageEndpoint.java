@@ -18,9 +18,9 @@ public class MessageEndpoint {
 		// TODO Auto-generated constructor stub
 	}
 	
-	@ApiMethod(name = "messageEndpoint.send", httpMethod="post")
+	@ApiMethod(name = "operation.send", httpMethod="post")
 	public void sendMessage(@Named("message") String message) throws IOException{
-		log.info("Endpoint call: clientendpoint.listClients");
+		log.info("Endpoint call: operation.listClients");
 		
 		MessageDao daoMessage = new MessageDao();
 		daoMessage.sendMessagge(message);	

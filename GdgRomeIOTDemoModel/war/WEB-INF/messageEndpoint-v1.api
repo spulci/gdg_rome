@@ -24,7 +24,7 @@
     "maxAge" : 0
   },
   "methods" : {
-    "messageEndpoint.messageEndpoint.send" : {
+    "messageEndpoint.operation.send" : {
       "path" : "sendMessage/{message}",
       "httpMethod" : "post",
       "authLevel" : "NONE",

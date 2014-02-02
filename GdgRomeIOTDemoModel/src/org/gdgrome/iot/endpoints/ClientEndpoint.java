@@ -15,7 +15,7 @@ import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.Named;
 import com.google.appengine.api.datastore.Key;
 
-@Api(name = "clientendpoint")
+@Api(name = "clientEndpoint")
 public class ClientEndpoint {
 	
 	private static final Logger log = Logger.getLogger(ClientEndpoint.class.getName());
@@ -24,9 +24,9 @@ public class ClientEndpoint {
 		
 	}
 	
-	@ApiMethod(name = "clientendpoint.listClients", httpMethod="post")
+	@ApiMethod(name = "operation.listClients", httpMethod="post")
 	public List<ClientBean> listClientBeans(){
-		log.info("Endpoint call: clientendpoint.listClients" );
+		log.info("Endpoint call: operation.listClients" );
 		
 		List<ClientBean> clientBeanLst = null;
 		ClientDao daoClient = new ClientDao();
@@ -34,17 +34,17 @@ public class ClientEndpoint {
 		return clientBeanLst;
 	}
 	
-	@ApiMethod(name = "clientendpoint.addClient", httpMethod="post")
+	@ApiMethod(name = "operation.addClient", httpMethod="post")
 	public void addClient(ClientBean client){
-		log.info("Endpoint call: clientendpoint.addClient" );
+		log.info("Endpoint call: operation.addClient" );
 		
 		ClientDao daoClient = new ClientDao();
 		daoClient.addClientBean(client);
 	}
 	
-	@ApiMethod(name = "clientendpoint.removeClient", httpMethod="post")
+	@ApiMethod(name = "operation.removeClient", httpMethod="post")
 	public void removeClient(Key id){
-		log.info("Endpoint call: clientendpoint.removeClient" );
+		log.info("Endpoint call: operation.removeClient" );
 		
 		ClientDao daoClient = new ClientDao();
 		daoClient.removeClientBeanById(id);

@@ -1,9 +1,9 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"FWXGb4Q2eZqWRcG8B2Ixrr-vrqQ/Fb_IYXrT2weWdmUo2-OA6SR1zRk\"",
+ "etag": "\"FWXGb4Q2eZqWRcG8B2Ixrr-vrqQ/tz5JeNt9ZTX3Fysu6cG-XqsOMbg\"",
  "discoveryVersion": "v1",
- "id": "clientendpoint:v1",
- "name": "clientendpoint",
+ "id": "clientEndpoint:v1",
+ "name": "clientEndpoint",
  "version": "v1",
  "description": "This is an API",
  "icons": {
@@ -11,10 +11,10 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rest",
- "baseUrl": "https://gdgrometestapp.appspot.com/_ah/api/clientendpoint/v1/",
- "basePath": "/_ah/api/clientendpoint/v1/",
+ "baseUrl": "https://gdgrometestapp.appspot.com/_ah/api/clientEndpoint/v1/",
+ "basePath": "/_ah/api/clientEndpoint/v1/",
  "rootUrl": "https://gdgrometestapp.appspot.com/_ah/api/",
- "servicePath": "clientendpoint/v1/",
+ "servicePath": "clientEndpoint/v1/",
  "batchPath": "batch",
  "parameters": {
   "alt": {
@@ -78,9 +78,6 @@
     "id": {
      "$ref": "Key"
     },
-    "messageId": {
-     "type": "string"
-    },
     "registrationId": {
      "type": "string"
     },
@@ -132,10 +129,10 @@
   }
  },
  "resources": {
-  "clientendpoint": {
+  "operation": {
    "methods": {
     "addClient": {
-     "id": "clientendpoint.clientendpoint.addClient",
+     "id": "clientEndpoint.operation.addClient",
      "path": "addClient",
      "httpMethod": "POST",
      "request": {
@@ -147,7 +144,7 @@
      ]
     },
     "listClients": {
-     "id": "clientendpoint.clientendpoint.listClients",
+     "id": "clientEndpoint.operation.listClients",
      "path": "clientbean",
      "httpMethod": "POST",
      "response": {
@@ -158,7 +155,7 @@
      ]
     },
     "removeClient": {
-     "id": "clientendpoint.clientendpoint.removeClient",
+     "id": "clientEndpoint.operation.removeClient",
      "path": "client",
      "httpMethod": "POST",
      "request": {

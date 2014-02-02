@@ -2,7 +2,7 @@
   "extends" : "thirdParty.api",
   "abstract" : false,
   "root" : "https://gdgrometestapp.appspot.com/_ah/api",
-  "name" : "clientendpoint",
+  "name" : "clientEndpoint",
   "version" : "v1",
   "defaultVersion" : false,
   "adapter" : {
@@ -24,7 +24,7 @@
     "maxAge" : 0
   },
   "methods" : {
-    "clientendpoint.clientendpoint.addClient" : {
+    "clientEndpoint.operation.addClient" : {
       "path" : "addClient",
       "httpMethod" : "post",
       "authLevel" : "NONE",
@@ -40,7 +40,7 @@
         "body" : "empty"
       }
     },
-    "clientendpoint.clientendpoint.listClients" : {
+    "clientEndpoint.operation.listClients" : {
       "path" : "clientbean",
       "httpMethod" : "post",
       "authLevel" : "NONE",
@@ -55,7 +55,7 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "clientendpoint.clientendpoint.removeClient" : {
+    "clientEndpoint.operation.removeClient" : {
       "path" : "client",
       "httpMethod" : "post",
       "authLevel" : "NONE",
@@ -82,9 +82,6 @@
             "$ref" : "Key"
           },
           "registrationId" : {
-            "type" : "string"
-          },
-          "messageId" : {
             "type" : "string"
           },
           "timestamp" : {
