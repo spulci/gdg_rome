@@ -40,21 +40,6 @@
         "body" : "empty"
       }
     },
-    "clientEndpoint.operation.listClients" : {
-      "path" : "clientbean",
-      "httpMethod" : "post",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "org.gdgrome.iot.endpoints.ClientEndpoint.listClientBeans",
-      "request" : {
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
     "clientEndpoint.operation.removeClient" : {
       "path" : "client",
       "httpMethod" : "post",
@@ -69,6 +54,21 @@
       },
       "response" : {
         "body" : "empty"
+      }
+    },
+    "clientEndpoint.operation.listClients" : {
+      "path" : "clientbean",
+      "httpMethod" : "post",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "org.gdgrome.iot.endpoints.ClientEndpoint.listClientBeans",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
       }
     }
   },
@@ -137,14 +137,14 @@
           "$ref" : "ClientBean"
         }
       },
-      "org.gdgrome.iot.endpoints.ClientEndpoint.listClientBeans" : {
-        "response" : {
-          "$ref" : "ClientBeanCollection"
-        }
-      },
       "org.gdgrome.iot.endpoints.ClientEndpoint.removeClient" : {
         "request" : {
           "$ref" : "Key"
+        }
+      },
+      "org.gdgrome.iot.endpoints.ClientEndpoint.listClientBeans" : {
+        "response" : {
+          "$ref" : "ClientBeanCollection"
         }
       }
     }

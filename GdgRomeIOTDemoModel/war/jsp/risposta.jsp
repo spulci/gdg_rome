@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1>Messaggio inviato ai client registrati!</h1>
 </body>
 </html>
