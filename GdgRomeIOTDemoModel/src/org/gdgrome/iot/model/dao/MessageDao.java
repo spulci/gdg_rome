@@ -15,6 +15,7 @@ import org.gdgrome.iot.model.factory.IOTServiceSingleton;
 
 import com.google.android.gcm.server.Constants;
 import com.google.android.gcm.server.Message;
+import com.google.android.gcm.server.Message.Builder;
 import com.google.android.gcm.server.Result;
 import com.google.android.gcm.server.Sender;
 
@@ -75,16 +76,17 @@ public class MessageDao implements IMessageDao {
 	}
 	
 	private static Result doSendViaGcm(String message, Sender sender, ClientBean clientBean) throws IOException {
-		    // Trim message if needed.
+
 			ClientDao daoClient = new ClientDao();
 			
 		    if (message.length() > 1000) {
 		      message = message.substring(0, 1000) + "[...]"; //$NON-NLS-1$
 		    }
 
-		    // This message object is a Google Cloud Messaging object, it is NOT 
-		    // related to the MessageData class
-		    Message msg = new Message.Builder().addData("message", message).build(); //$NON-NLS-1$
+		    Builder builder = new Message.Builder();
+		    builder.addData("message", "{\"text\":\""+message + "\"}");
+		    Message msg = builder.build();
+
 		    Result result = sender.send(msg, clientBean.getRegistrationId(),
 		        5);
 		    if (result.getMessageId() != null) {
@@ -103,5 +105,6 @@ public class MessageDao implements IMessageDao {
 
 		    return result;
 		  }
+	
 
 }
