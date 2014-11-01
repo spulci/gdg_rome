@@ -66,6 +66,12 @@
             <version>1.9.10</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena-libs</artifactId>
+			<type>pom</type>
+			<version>2.12.0</version>
+		</dependency>
     </dependencies>
 	
 	
