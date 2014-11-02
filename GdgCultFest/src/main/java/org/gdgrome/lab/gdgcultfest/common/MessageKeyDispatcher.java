@@ -1,5 +1,6 @@
 package org.gdgrome.lab.gdgcultfest.common;
 
+import java.text.MessageFormat;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
@@ -15,6 +16,14 @@ public class MessageKeyDispatcher {
 	public static String getString(String key) {
 		try {
 			return RESOURCE_BUNDLE.getString(key);
+		} catch (MissingResourceException e) {
+			return '!' + key + '!';
+		}
+	}
+	
+	public static String getString(String key, String... placeHolder) {
+		try {
+			return MessageFormat.format(RESOURCE_BUNDLE.getString(key), placeHolder);
 		} catch (MissingResourceException e) {
 			return '!' + key + '!';
 		}
