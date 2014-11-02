@@ -2,6 +2,7 @@ package org.gdgrome.lab.gdgcultfest.services.impl;
 
 import java.io.ByteArrayOutputStream;
 
+import org.gdgrome.lab.gdgcultfest.exceptions.SPARQLServiceExcetpion;
 import org.gdgrome.lab.gdgcultfest.services.SPARQLQueryServices;
 
 import com.hp.hpl.jena.query.ARQ;
@@ -21,15 +22,20 @@ public class SPARQLQueryServicesImpl implements SPARQLQueryServices {
 	}
 
 	@Override
-	public String callSparqlEndpoint(String sparqlQuery) {
-		Query query = QueryFactory.create(sparqlQuery);
-		ARQ.getContext().setTrue(ARQ.useSAX);
-		QueryExecution qexec = QueryExecutionFactory.sparqlService(DBPEDIA_ENDPOINT, query);
-		ResultSet rs = qexec.execSelect();
+	public String callSparqlEndpoint(String sparqlQuery) throws SPARQLServiceExcetpion {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		
-		ResultSetFormatter.outputAsJSON(baos, rs);
-		
+		try {
+			Query query = QueryFactory.create(sparqlQuery);
+			ARQ.getContext().setTrue(ARQ.useSAX);
+			QueryExecution qexec = QueryExecutionFactory.sparqlService(DBPEDIA_ENDPOINT, query);
+			ResultSet rs = qexec.execSelect();			
+			
+			ResultSetFormatter.outputAsJSON(baos, rs);
+		}
+		catch(Exception ex) {
+			throw new SPARQLServiceExcetpion(ex);
+		}
 		return baos.toString();
 	}
 
