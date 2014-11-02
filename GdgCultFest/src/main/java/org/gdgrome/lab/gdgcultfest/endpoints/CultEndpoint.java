@@ -4,6 +4,11 @@ import java.util.logging.Logger;
 
 import javax.inject.Named;
 
+import org.gdgrome.lab.gdgcultfest.common.MessageKeyDispatcher;
+import org.gdgrome.lab.gdgcultfest.exceptions.SPARQLServiceExcetpion;
+import org.gdgrome.lab.gdgcultfest.services.SPARQLQueryServices;
+import org.gdgrome.lab.gdgcultfest.services.impl.SPARQLQueryServicesImpl;
+
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiMethod.HttpMethod;
@@ -25,30 +30,31 @@ public class CultEndpoint {
 	}
 	
 	@ApiMethod(
-			name="esponi", 
-			httpMethod=HttpMethod.POST
-	)
-	public void esponiCultura(){
-		try{
-			log.info("classe: " + CultEndpoint.class.getName() + " metodo remoto: esponi");
-		}
-		catch(Exception e){
-			log.severe("Chiamata metodo remoto: esponi non terminata correttamente");
-		}
-		
-	}
-	
-	@ApiMethod(
 			name="esponiByCitta", 
 			httpMethod=HttpMethod.POST
 	)
-	public void esponiCultura(@Named @Nullable String citta){
+	public String esponiCultura(@Named String limit){
+		
+		String jsonResult = null;
+		
 		try{
 			log.info("classe: " + CultEndpoint.class.getName() + " metodo remoto: esponiByCitta");
+			String query = MessageKeyDispatcher.getString("sparql.rome.query", limit);
+			
+			SPARQLQueryServices queryService = new SPARQLQueryServicesImpl();
+			
+			jsonResult = queryService.callSparqlEndpoint(query);
+			
+		}
+		catch(SPARQLServiceExcetpion e){
+			log.severe("Chiamata metodo remoto: esponiByCitta Errore dal servizio SPARQL DBPedia");
 		}
 		catch(Exception e){
 			log.severe("Chiamata metodo remoto: esponiByCitta non terminata correttamente");
 		}
+		
+		return jsonResult;
+		
 	}
 
 }
