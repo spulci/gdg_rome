@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import javax.inject.Named;
 
 import org.gdgrome.lab.gdgcultfest.common.MessageKeyDispatcher;
-import org.gdgrome.lab.gdgcultfest.exceptions.SPARQLServiceExcetpion;
+import org.gdgrome.lab.gdgcultfest.exceptions.SPARQLServiceException;
 import org.gdgrome.lab.gdgcultfest.services.SPARQLQueryServices;
 import org.gdgrome.lab.gdgcultfest.services.impl.SPARQLQueryServicesImpl;
 
@@ -46,7 +46,7 @@ public class CultEndpoint {
 			jsonResult = queryService.callSparqlEndpoint(query);
 			
 		}
-		catch(SPARQLServiceExcetpion e){
+		catch(SPARQLServiceException e){
 			log.severe("Chiamata metodo remoto: esponiByCitta Errore dal servizio SPARQL DBPedia");
 		}
 		catch(Exception e){

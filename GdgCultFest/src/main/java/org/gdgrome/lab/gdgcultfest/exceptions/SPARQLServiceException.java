@@ -1,27 +1,27 @@
 package org.gdgrome.lab.gdgcultfest.exceptions;
 
-public class SPARQLServiceExcetpion extends Exception {
+public class SPARQLServiceException extends Exception {
 
-	public SPARQLServiceExcetpion() {
+	public SPARQLServiceException() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public SPARQLServiceExcetpion(String message) {
+	public SPARQLServiceException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
 
-	public SPARQLServiceExcetpion(Throwable cause) {
+	public SPARQLServiceException(Throwable cause) {
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}
 
-	public SPARQLServiceExcetpion(String message, Throwable cause) {
+	public SPARQLServiceException(String message, Throwable cause) {
 		super(message, cause);
 		// TODO Auto-generated constructor stub
 	}
 
-	public SPARQLServiceExcetpion(String message, Throwable cause,
+	public SPARQLServiceException(String message, Throwable cause,
 			boolean enableSuppression, boolean writableStackTrace) {
 		super(message, cause, enableSuppression, writableStackTrace);
 		// TODO Auto-generated constructor stub

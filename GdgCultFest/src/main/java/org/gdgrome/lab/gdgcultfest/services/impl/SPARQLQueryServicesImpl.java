@@ -2,7 +2,7 @@ package org.gdgrome.lab.gdgcultfest.services.impl;
 
 import java.io.ByteArrayOutputStream;
 
-import org.gdgrome.lab.gdgcultfest.exceptions.SPARQLServiceExcetpion;
+import org.gdgrome.lab.gdgcultfest.exceptions.SPARQLServiceException;
 import org.gdgrome.lab.gdgcultfest.services.SPARQLQueryServices;
 
 import com.hp.hpl.jena.query.ARQ;
@@ -22,7 +22,7 @@ public class SPARQLQueryServicesImpl implements SPARQLQueryServices {
 	}
 
 	@Override
-	public String callSparqlEndpoint(String sparqlQuery) throws SPARQLServiceExcetpion {
+	public String callSparqlEndpoint(String sparqlQuery) throws SPARQLServiceException {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		
 		try {
@@ -34,7 +34,7 @@ public class SPARQLQueryServicesImpl implements SPARQLQueryServices {
 			ResultSetFormatter.outputAsJSON(baos, rs);
 		}
 		catch(Exception ex) {
-			throw new SPARQLServiceExcetpion(ex);
+			throw new SPARQLServiceException(ex);
 		}
 		return baos.toString();
 	}
