@@ -4,5 +4,5 @@ public interface SPARQLQueryServices {
 
 	public final static String DBPEDIA_ENDPOINT = "http://dbpedia.org/sparql";
 	
-	public void callSparqlEndpoint(String sparqlQuery);
+	public String callSparqlEndpoint(String sparqlQuery, String limit);
 }
