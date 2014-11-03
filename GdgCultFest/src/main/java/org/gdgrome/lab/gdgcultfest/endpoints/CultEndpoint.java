@@ -60,16 +60,5 @@ public class CultEndpoint {
 		
 	}
 	
-	public static void main(String args[]){
-		Properties props = new Properties();
-        props.setProperty("url", "PREFIX dbpclass: <http://dbpedia.org/class/yago/ArtMuseumsAndGalleriesInRome>PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>PREFIX grs: <http://www.georss.org/georss/>SELECT ?resource ?abstractEN ?abstractIT WHERE { ?resource a <http://dbpedia.org/class/yago/ArtMuseumsAndGalleriesInRome> . ?resource dbpedia-owl:abstract ?abstractEN . ?resource dbpedia-owl:abstract ?abstractIT . FILTER(lang(?abstractEN) = 'en' AND lang(?abstractIT) = 'it' ) } ORDER BY ?resource LIMIT {0}");
-        try{
-        	props.store(System.out, null);
-        }
-        catch(Exception e){
-        	
-        }
-        
-	}
 
 }
