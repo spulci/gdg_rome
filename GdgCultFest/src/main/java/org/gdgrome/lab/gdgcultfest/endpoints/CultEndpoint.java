@@ -49,10 +49,10 @@ public class CultEndpoint {
 			pieceOfCult.setQueryResult(jsonResult);
 		}
 		catch(SPARQLServiceException e){
-			log.severe("Chiamata metodo remoto: esponiByCitta Errore dal servizio SPARQL DBPedia");
+			log.severe("Chiamata metodo remoto: esponiCulturaJson Errore dal servizio SPARQL DBPedia");
 		}
 		catch(Exception e){
-			log.severe("Chiamata metodo remoto: esponiByCitta non terminata correttamente");
+			log.severe("Chiamata metodo remoto: esponiCulturaJson non terminata correttamente");
 		}
 		
 		return pieceOfCult;
