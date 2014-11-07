@@ -32,7 +32,7 @@ public class CultEndpoint {
 	}
 	
 	@ApiMethod(
-			name="apiCultBackend.esponiByCitta", 
+			name="apiCultBackend.esponiCultura", 
 			httpMethod="post"
 	)
 	public CultPojo esponiCultura(@Named("limit") String limit){
@@ -41,7 +41,7 @@ public class CultEndpoint {
 		CultPojo pieceOfCult = new CultPojo();
 		
 		try{
-			log.info("classe: " + CultEndpoint.class.getName() + " metodo remoto: esponiByCitta");
+			log.info("classe: " + CultEndpoint.class.getName() + " metodo remoto: esponiCultura");
 			String query = MessageKeyDispatcher.getString("sparql.rome.query", limit);
 			
 			SPARQLQueryServices queryService = new SPARQLQueryServicesImpl();
@@ -50,10 +50,10 @@ public class CultEndpoint {
 			pieceOfCult.setQueryResult(jsonResult);
 		}
 		catch(SPARQLServiceException e){
-			log.severe("Chiamata metodo remoto: esponiByCitta Errore dal servizio SPARQL DBPedia");
+			log.severe("Chiamata metodo remoto: esponiCultura Errore dal servizio SPARQL DBPedia");
 		}
 		catch(Exception e){
-			log.severe("Chiamata metodo remoto: esponiByCitta non terminata correttamente");
+			log.severe("Chiamata metodo remoto: esponiCultura non terminata correttamente");
 		}
 		
 		return pieceOfCult;
