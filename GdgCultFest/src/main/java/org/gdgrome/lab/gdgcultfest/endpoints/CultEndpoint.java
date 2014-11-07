@@ -1,6 +1,6 @@
 package org.gdgrome.lab.gdgcultfest.endpoints;
 
-import java.util.Properties;
+
 import java.util.logging.Logger;
 
 import javax.inject.Named;
@@ -13,8 +13,7 @@ import org.gdgrome.lab.gdgcultfest.services.impl.SPARQLQueryServicesImpl;
 
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
-import com.google.api.server.spi.config.ApiMethod.HttpMethod;
-import com.google.api.server.spi.config.Nullable;
+
 
 @Api(
 		name="apiCultBackend", 
@@ -32,7 +31,7 @@ public class CultEndpoint {
 	}
 	
 	@ApiMethod(
-			name="apiCultBackend.esponiByCitta", 
+			name="apiCultBackend.esponiCulturaJson", 
 			httpMethod="post"
 	)
 	public CultPojo esponiCultura(@Named("limit") String limit){
